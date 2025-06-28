@@ -1,0 +1,33 @@
+@use "sass:meta";
+@import "../css/bootstrap.css";
+@include meta.load-css("app.scss");
+// @import "../css/jquery.mb.YTPlayer.css";
+@import "../css/swiper-bundle.min.css";
+
+// Font
+@import "../font/fonts.css";
+
+// Icon
+@import "../icons/icomoon/style.css";
+
+body {
+  .dark-mode-logo {
+    display: none;
+  }
+  &.dark-mode {
+    .light-mode-logo {
+      display: none;
+    }
+    .dark-mode-logo {
+      display: block;
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .footer .footer-col-block .tf-collapse-content {
+    overflow-y: hidden;
+    display: block;
+    height: 0;
+    transition: 0.5s;
+  }
+}
