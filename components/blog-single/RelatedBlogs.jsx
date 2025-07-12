@@ -20,14 +20,14 @@ export default function RelatedBlogs() {
             slidesPerView: 2,
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 24,
           },
           992: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 30,
           },
-          1200: {
+          1400: {
             slidesPerView: 4,
             spaceBetween: 30,
           },

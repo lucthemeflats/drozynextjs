@@ -7,15 +7,9 @@ import DarkModeToggler from "./DarkModeToggler";
 
 export default function Header2() {
   const [isFixed, setIsFixed] = useState(false);
-  const [isFixed2, setIsFixed2] = useState(false);
 
   useEffect(() => {
     function handleScroll() {
-      if (window.scrollY >= 150) {
-        setIsFixed2(true);
-      } else {
-        setIsFixed2(false);
-      }
       if (window.scrollY >= 250) {
         setIsFixed(true);
       } else {
@@ -31,7 +25,11 @@ export default function Header2() {
   return (
     <header>
       {/* header-menu */}
-      <div className="header-menu style-1 header-fixed">
+      <div
+        className={`header-menu style-1 header-fixed ${
+          isFixed ? " is-fixed" : ""
+        }`}
+      >
         <div className="tf-container w-xxl">
           <div className="header-inner d-flex justify-content-between align-items-center">
             <div className="header-left">
@@ -94,25 +92,21 @@ export default function Header2() {
       </div>
       {/* End header-menu */}
       {/* header-menu */}
-      <div
-        className={`header-menu style-1 ${isFixed2 ? "header-fixed" : ""} ${
-          isFixed ? " is-fixed" : ""
-        }`}
-      >
+      <div className={`header-menu style-1`}>
         <div className="tf-container w-xxl">
           <div className="header-inner d-flex justify-content-between align-items-center">
             <div className="header-left">
               <Link href={`/`} className="site-logo">
                 <Image
                   alt="logo"
-                  className="main-logo"
+                  className="main-logo light-mode-logo"
                   src="/images/logo/logo.svg"
                   width={194}
                   height={44}
                 />
                 <Image
                   alt="logo"
-                  className="main-logo"
+                  className="main-logo dark-mode-logo"
                   src="/images/logo/logo-dark.svg"
                   width={194}
                   height={44}

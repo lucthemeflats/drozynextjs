@@ -9,15 +9,36 @@ import React from "react";
 import { allBlogs } from "@/data/blogs";
 import SocialShare2 from "@/components/blog-single/SocialShare2";
 import Sidebar from "@/components/blog-single/Sidebar";
-export const metadata = {
-  title:
-    "Blog Single 02 || Drozy - Modern Blog & Magazine React Nextjs Template",
-  description: "Drozy - Modern Blog & Magazine React Nextjs Template",
-};
+import { notFound } from "next/navigation";
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+
+  const post = allBlogs.filter((p) => p.id == id)[0] || allBlogs[0];
+
+  return {
+    title:
+      post.title + " || Drozy - Modern Blog & Magazine React Nextjs Template",
+    description:
+      post.excerpt ||
+      post.description ||
+      "Drozy - Modern Blog & Magazine React Nextjs Template",
+    openGraph: {
+      title:
+        post.title + " || Drozy - Modern Blog & Magazine React Nextjs Template",
+      description:
+        post.excerpt || "Drozy - Modern Blog & Magazine React Nextjs Template",
+      type: "article",
+      url: `/single-post-2/${post.id}`,
+    },
+  };
+}
 export default async function page({ params }) {
   const { id } = await params;
 
-  const blog = allBlogs.filter((p) => p.id == id)[0] || allBlogs[0];
+  const blog = allBlogs.filter((p) => p.id == id)[0];
+  if (!blog) {
+    return notFound();
+  }
   return (
     <>
       <Header1 />
@@ -29,7 +50,11 @@ export default async function page({ params }) {
                 Home
               </Link>
             </li>
-            <li>{blog.category ?? "Life Style"}</li>
+            <li>
+              <Link href={`/categories-1`}>
+                {blog.category ?? "Life Style"}
+              </Link>
+            </li>
             <li>{blog.title}</li>
           </ul>
         </div>
@@ -243,7 +268,7 @@ export default async function page({ params }) {
                         <div className="tf-article-navigation">
                           <div className="item prev">
                             <Link
-                              href={`/single-post-1/1`}
+                              href={`/single-post-1/22`}
                               className="hover-underline-link text-body-1 text_on-surface-color fw-7 mb_12"
                             >
                               Previous
@@ -256,7 +281,7 @@ export default async function page({ params }) {
                           </div>
                           <div className="item next">
                             <Link
-                              href={`/single-post-1/1`}
+                              href={`/single-post-1/22`}
                               className="hover-underline-link text-body-1 text_on-surface-color fw-7 mb_12"
                             >
                               Next

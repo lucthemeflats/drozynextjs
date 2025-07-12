@@ -1,9 +1,10 @@
-import { categories, tags } from "@/data/blogCategories";
-import { postItems } from "@/data/blogs";
+import { tags } from "@/data/blogCategories";
+import { postItems, posts } from "@/data/blogs";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import BlogCard1 from "../blog-cards/BlogCard1";
+import { categoryLinks2 } from "@/data/menu";
 
 export default function Sidebar() {
   return (
@@ -52,18 +53,20 @@ export default function Sidebar() {
       <div className="sidebar__item">
         <h5 className="sidebar__title">Categories</h5>
         <ul className="sidebar-categories">
-          {categories.map((category, index) => (
+          {categoryLinks2.map(({ href, label, slug }) => (
             <li
-              key={index}
+              key={label}
               className="item d-flex align-items-center justify-content-between"
             >
               <Link
-                href={`/categories-1`}
                 className="fw-7 text-body-1 text_on-surface-color"
+                href={`${href}/${slug}`}
               >
-                {category.name}
+                {label}
               </Link>
-              <span className="number">{category.number}</span>
+              <span className="number">
+                {posts.filter((el) => el.category == label).length}
+              </span>
             </li>
           ))}
         </ul>

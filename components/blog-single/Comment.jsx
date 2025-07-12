@@ -101,7 +101,7 @@ export default function Comment() {
           </div>
         </div>
       </div>
-      <div className="leave-comment">
+      <div className="leave-comment" id="reply">
         <div className="heading-title mb_41">
           <h4 className="mb_24">Leave A Comment</h4>
         </div>

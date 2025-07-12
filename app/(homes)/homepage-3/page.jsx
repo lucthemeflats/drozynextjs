@@ -34,7 +34,7 @@ export default function page() {
             </div>
             <InstagramPosts />
             <Footer1
-              parentClass="tf-container w-xl tf-spacing-8 pt-0"
+              parentClass="tf-container w-xl tf-spacing-8 pt-0 page-3"
               type={3}
             />
           </div>

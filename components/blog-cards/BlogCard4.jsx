@@ -5,9 +5,9 @@ import React from "react";
 export default function BlogCard4({ post }) {
   return (
     <div className="feature-post-item style-list hover-image-translate">
-      <div className="img-style">
+      <div className="img-style w-100">
         <Image
-          className="lazyload"
+          className="lazyload w-100"
           decoding="async"
           loading="lazy"
           src={post.imgSrc}
@@ -44,7 +44,7 @@ export default function BlogCard4({ post }) {
               {post.title}
             </Link>
           </h3>
-          <p className="text-body-1">{post.excerpt}</p>
+          <p className="text-body-1 blog-card-4-desc">{post.excerpt}</p>
         </div>
         <Link
           href={`/single-post-1/${post.id}`}

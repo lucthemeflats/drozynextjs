@@ -139,9 +139,9 @@ export default function Nav() {
           </span>
         </a>
         <ul className="submenu">
-          {categoryLinks2.map(({ href, label }) => (
+          {categoryLinks2.map(({ href, label, slug }) => (
             <li key={label} className="menu-item">
-              <Link href={href}>{label}</Link>
+              <Link href={`${href}/${slug}`}>{label}</Link>
             </li>
           ))}
         </ul>

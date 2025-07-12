@@ -1,8 +1,8 @@
 export const quickLinks = [
-  { label: "Homepage" },
-  { label: "About Us" },
-  { label: "Contact Us" },
-  { label: "Our Store" },
+  { label: "Homepage", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Our Store", href: "/about" },
 ];
 
 export const categories = [

@@ -874,6 +874,45 @@ export const posts = [
       "Proven strategies to boost your focus, energy, and efficiency from your home office.",
     readTime: "4 Mins read",
   },
+  {
+    id: 18,
+    imgSrc: "/images/feature-post/feature-item-21.webp",
+    imgSrcSet: "/images/feature-post/feature-item-21.webp 428w",
+    category: "Home Decor",
+    date: "February 19, 2025",
+    author: "Jane Cooper",
+    category: "Home Decor",
+    title: "Home Workouts That Actually Work For Busy People Daily",
+    excerpt:
+      "Proven strategies to boost your focus, energy, and efficiency from your home office.",
+    readTime: "4 Mins read",
+  },
+  {
+    id: 19,
+    imgSrc: "/images/feature-post/feature-item-22.webp",
+    imgSrcSet: "/images/feature-post/feature-item-22.webp 428w",
+    category: "Fashion",
+    date: "February 19, 2025",
+    author: "Ralph Edwards",
+    category: "Travel",
+    excerpt:
+      "Proven strategies to boost your focus, energy, and efficiency from your home office.",
+    readTime: "4 Mins read",
+    title: "How To Style Neutrals For Any Weather.",
+  },
+  {
+    id: 20,
+    imgSrc: "/images/feature-post/feature-item-23.webp",
+    imgSrcSet: "/images/feature-post/feature-item-23.webp 200w",
+    category: "Mindfulness",
+    date: "February 6, 2025",
+    author: "Ralph Edwards",
+    category: "Food",
+    title: "How To Start Journaling For Mental Clarity.",
+    excerpt:
+      "Proven strategies to boost your focus, energy, and efficiency from your home office.",
+    readTime: "4 Mins read",
+  },
 ];
 
 export const listPosts = [
@@ -883,7 +922,7 @@ export const listPosts = [
     category: "Home Decor",
     date: "FEBRUARY 12, 2025",
     author: "EMMA CARSON",
-    title: "10 Simple Habits To Build A More Joyful And Fulfilling Life.",
+    title: "10 Simple Habits To Build A More Joyful.",
     excerpt:
       "Learn how to build a personalized self-care routine that fits your lifestyle, brings real results, and supports your long-term mental.",
   },

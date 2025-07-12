@@ -3,6 +3,7 @@
 import { gridPosts } from "@/data/blogs";
 import React from "react";
 import BlogCard1 from "@/components/blog-cards/BlogCard1";
+import NewsLetterForm from "@/components/common/NewsLetterForm";
 
 export default function LatestPosts() {
   return (
@@ -19,35 +20,7 @@ export default function LatestPosts() {
             Subscribe Now To Stay Updated With Top News!
           </h4>
           <div>
-            <form
-              id="subscribe-form-2"
-              acceptCharset="utf-8"
-              data-mailchimp="true"
-              onSubmit={(e) => e.preventDefault()}
-              className="form-newslate mb_20"
-            >
-              <div id="subscribe-content-2" className="position-relative">
-                <fieldset className="fieldset-item">
-                  <input
-                    type="email"
-                    placeholder="E-mail"
-                    id="subscribe-email-2"
-                    aria-required="true"
-                    required
-                  />
-                </fieldset>
-                <div className="box-btn">
-                  <button
-                    id="subscribe-button-2"
-                    type="button"
-                    className="btn-submit animate-hover-btn"
-                  >
-                    <span className="icon-PaperPlaneTilt" />
-                  </button>
-                </div>
-              </div>
-              <div id="subscribe-msg-2" />
-            </form>
+            <NewsLetterForm />
             <div className="box-fieldset-item d-flex">
               <fieldset className="d-flex gap_12">
                 <input type="checkbox" className="tf-check" />

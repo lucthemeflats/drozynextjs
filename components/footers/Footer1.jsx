@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { categories, pages, policies, quickLinks } from "@/data/footerLinks";
+import { categoryLinks2 } from "@/data/menu";
+import NewsLetterForm from "../common/NewsLetterForm";
 
 export default function Footer1({
   parentClass = "tf-container tf-spacing-8 pt-0",
@@ -89,20 +91,12 @@ export default function Footer1({
                 <ul className="footer-menu-list d-grid gap_12">
                   {quickLinks.map((item, index) => (
                     <li className="text-caption-1" key={index}>
-                      {item.label === "Our Store" ? (
-                        <a href="#" className="link">
-                          {item.label}
-                        </a>
-                      ) : (
-                        <Link
-                          href={`/${item.label
-                            .toLowerCase()
-                            .replace(/\s+/g, "")}`} // dynamically generate `/aboutus`, `/contactus`, etc.
-                          className="link"
-                        >
-                          {item.label}
-                        </Link>
-                      )}
+                      <Link
+                        href={item.href} // dynamically generate `/aboutus`, `/contactus`, etc.
+                        className="link"
+                      >
+                        {item.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -114,10 +108,10 @@ export default function Footer1({
               </h6>
               <div className="tf-collapse-content">
                 <ul className="footer-menu-list d-grid gap_12">
-                  {categories.map((category, index) => (
-                    <li className="text-caption-1" key={index}>
-                      <Link href="/categories-1" className="link">
-                        {category.label}
+                  {categoryLinks2.slice(0, 5).map(({ href, label, slug }) => (
+                    <li className="text-caption-1" key={slug}>
+                      <Link href={`${href}/${slug}`} className="link">
+                        {label}
                       </Link>
                     </li>
                   ))}
@@ -150,42 +144,14 @@ export default function Footer1({
               <h6 className="footer-title mb_20">
                 Subscribe for all the top news!
               </h6>
-              <form
-                id="subscribe-form"
-                acceptCharset="utf-8"
-                data-mailchimp="true"
-                onSubmit={(e) => e.preventDefault()}
-                className="form-newslate mb_20"
-              >
-                <div id="subscribe-content" className="position-relative">
-                  <fieldset className="fieldset-item">
-                    <input
-                      type="email"
-                      placeholder="E-mail"
-                      id="subscribe-email"
-                      aria-required="true"
-                      required
-                    />
-                  </fieldset>
-                  <div className="box-btn">
-                    <button
-                      id="subscribe-button"
-                      type="button"
-                      className="btn-submit animate-hover-btn"
-                    >
-                      <span className="icon-PaperPlaneTilt" />
-                    </button>
-                  </div>
-                </div>
-                <div id="subscribe-msg" />
-              </form>
+              <NewsLetterForm />
               <div className="box-fieldset-item d-flex">
                 <fieldset className="d-flex gap_12">
                   <input type="checkbox" className="tf-check" id="note" />
                 </fieldset>
                 <p className="text-body-1">
                   By clicking the Subscribe button, you acknowledge that you
-                  have read and agree to our
+                  have read and agree to our{" "}
                   <a href="#" className="fw-7 text_on-surface-color">
                     Privacy Policy
                   </a>{" "}

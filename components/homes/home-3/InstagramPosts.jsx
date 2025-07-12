@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { instagramItems } from "@/data/instagramPosts";
 import React from "react";
+import NewsLetterForm from "@/components/common/NewsLetterForm";
 
 export default function InstagramPosts() {
   return (
@@ -21,9 +22,9 @@ export default function InstagramPosts() {
             </div>
             {instagramItems.slice(0, 3).map((item, index) => (
               <div className="hover-image-translate" key={index}>
-                <a href="#" className="img-style rounded-12">
+                <a href="#" className="img-style rounded-12 w-100">
                   <Image
-                    className="lazyload"
+                    className="lazyload w-100"
                     loading="lazy"
                     width={330}
                     height={330}
@@ -38,9 +39,9 @@ export default function InstagramPosts() {
             <div className="tf-grid-layout sm-col-2 mb_30">
               {instagramItems.slice(3).map((item, index) => (
                 <div className="hover-image-translate" key={index}>
-                  <a href="#" className="img-style rounded-12">
+                  <a href="#" className="img-style rounded-12 w-100">
                     <Image
-                      className="lazyload"
+                      className="lazyload w-100"
                       loading="lazy"
                       width={330}
                       height={330}
@@ -51,9 +52,9 @@ export default function InstagramPosts() {
                 </div>
               ))}
               <div className="hover-image-translate">
-                <a href="#" className="img-style rounded-12">
+                <a href="#" className="img-style rounded-12 w-100">
                   <Image
-                    className="lazyload"
+                    className="lazyload w-100"
                     loading="lazy"
                     width={330}
                     height={330}
@@ -66,33 +67,7 @@ export default function InstagramPosts() {
             <div className="newsletter-item d-flex flex-column justify-content-between">
               <h3 className="title mb_20">Subscribe For All The Top News!</h3>
               <div>
-                <form
-                  id="subscribe-form"
-                  onSubmit={(e) => e.preventDefault()}
-                  className="form-newslate mb_20"
-                >
-                  <div id="subscribe-content" className="position-relative">
-                    <fieldset className="fieldset-item">
-                      <input
-                        type="email"
-                        placeholder="E-mail"
-                        id="subscribe-email"
-                        aria-required="true"
-                        required
-                      />
-                    </fieldset>
-                    <div className="box-btn">
-                      <button
-                        id="subscribe-button"
-                        type="button"
-                        className="btn-submit animate-hover-btn"
-                      >
-                        <span className="icon-PaperPlaneTilt" />
-                      </button>
-                    </div>
-                  </div>
-                  <div id="subscribe-msg" />
-                </form>
+                <NewsLetterForm />
                 <div className="box-fieldset-item d-flex">
                   <fieldset className="d-flex gap_12">
                     <input type="checkbox" className="tf-check" id="note" />

@@ -1,5 +1,7 @@
 "use client";
 
+import NewsLetterForm from "@/components/common/NewsLetterForm";
+
 export default function Cta() {
   return (
     <div className="tf-container w-xxl">
@@ -10,33 +12,7 @@ export default function Cta() {
           insights, and weekly highlights you won’t want to miss.
         </p>
         <div className="form">
-          <form
-            id="subscribe-form-2"
-            onSubmit={(e) => e.preventDefault()}
-            className="form-newslate mb_12"
-          >
-            <div id="subscribe-content-2" className="position-relative">
-              <fieldset className="fieldset-item">
-                <input
-                  type="email"
-                  placeholder="E-mail"
-                  id="subscribe-email-2"
-                  aria-required="true"
-                  required
-                />
-              </fieldset>
-              <div className="box-btn">
-                <button
-                  id="subscribe-button-2"
-                  type="button"
-                  className="btn-submit animate-hover-btn"
-                >
-                  <span className="icon-PaperPlaneTilt" />
-                </button>
-              </div>
-            </div>
-            <div id="subscribe-msg-2" />
-          </form>
+          <NewsLetterForm />
           <div className="box-fieldset-item d-flex">
             <fieldset className="d-flex gap_12">
               <input type="checkbox" className="tf-check" />

@@ -165,9 +165,9 @@ export default function MobileMenu() {
                 data-bs-parent="#menu-mobile-menu"
               >
                 <ul className="sub-mobile">
-                  {categoryLinks2.map(({ href, label }) => (
+                  {categoryLinks2.map(({ href, label, slug }) => (
                     <li key={label} className="menu-item">
-                      <Link href={href}>{label}</Link>
+                      <Link href={`${href}/${slug}`}>{label}</Link>
                     </li>
                   ))}
                 </ul>

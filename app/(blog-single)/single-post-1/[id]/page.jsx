@@ -8,16 +8,37 @@ import Footer1 from "@/components/footers/Footer1";
 import Header1 from "@/components/headers/Header1";
 import React from "react";
 import { allBlogs } from "@/data/blogs";
+import { notFound } from "next/navigation";
 
-export const metadata = {
-  title:
-    "Blog Single 01 || Drozy - Modern Blog & Magazine React Nextjs Template",
-  description: "Drozy - Modern Blog & Magazine React Nextjs Template",
-};
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+
+  const post = allBlogs.filter((p) => p.id == id)[0] || allBlogs[0];
+
+  return {
+    title:
+      post.title + " || Drozy - Modern Blog & Magazine React Nextjs Template",
+    description:
+      post.excerpt ||
+      post.description ||
+      "Drozy - Modern Blog & Magazine React Nextjs Template",
+    openGraph: {
+      title:
+        post.title + " || Drozy - Modern Blog & Magazine React Nextjs Template",
+      description:
+        post.excerpt || "Drozy - Modern Blog & Magazine React Nextjs Template",
+      type: "article",
+      url: `/single-post-1/${post.id}`,
+    },
+  };
+}
 export default async function page({ params }) {
   const { id } = await params;
 
-  const blog = allBlogs.filter((p) => p.id == id)[0] || allBlogs[0];
+  const blog = allBlogs.filter((p) => p.id == id)[0];
+  if (!blog) {
+    return notFound();
+  }
   return (
     <>
       <Header1 />
@@ -29,7 +50,11 @@ export default async function page({ params }) {
                 Home
               </Link>
             </li>
-            <li>{blog.category ?? "Life Style"}</li>
+            <li>
+              <Link href={`/categories-1`}>
+                {blog.category ?? "Life Style"}
+              </Link>
+            </li>
             <li>{blog.title}</li>
           </ul>
         </div>
@@ -75,13 +100,14 @@ export default async function page({ params }) {
             <Image
               decoding="async"
               loading="eager"
+              className="blog-single-image"
               width={1800}
               height={700}
               alt="page-title"
               src={
                 blog.imgSrc ?? "/images/feature-post/thumbs-main-post-1.webp"
               }
-              style={{ maxHeight: "100vh", objectFit: "contain" }}
+              style={{ maxHeight: "500px", objectFit: "contain" }}
             />
           </div>
         </div>
@@ -272,7 +298,7 @@ export default async function page({ params }) {
                   <div className="tf-article-navigation">
                     <div className="item prev">
                       <Link
-                        href={`/single-post-1/1`}
+                        href={`/single-post-1/22`}
                         className="hover-underline-link text-body-1 text_on-surface-color fw-7 mb_12"
                       >
                         Previous
@@ -285,7 +311,7 @@ export default async function page({ params }) {
                     </div>
                     <div className="item next">
                       <Link
-                        href={`/single-post-1/1`}
+                        href={`/single-post-1/22`}
                         className="hover-underline-link text-body-1 text_on-surface-color fw-7 mb_12"
                       >
                         Next

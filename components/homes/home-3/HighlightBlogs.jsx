@@ -33,10 +33,13 @@ export default function HighlightBlogs() {
                 >
                   <Link
                     href={`/single-post-1/${post.id}`}
-                    className="img-style"
+                    className={`img-style ${
+                      post.style === "large" ? "w-100 mb_20" : ""
+                    } `}
                   >
                     <Image
                       loading="lazy"
+                      className="w-100"
                       width={post.style === "large" ? 392 : 120}
                       height={post.style === "large" ? 221 : 120}
                       alt="feature"

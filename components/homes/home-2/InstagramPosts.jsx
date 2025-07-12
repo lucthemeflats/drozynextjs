@@ -23,9 +23,9 @@ export default function InstagramPosts() {
               className={`hover-image-translate ${img.extraClass || ""}`}
               key={index}
             >
-              <a href="#" className="img-style rounded-16">
+              <a href="#" className="img-style rounded-16 w-100">
                 <Image
-                  className="lazyload"
+                  className="lazyload w-100"
                   decoding="async"
                   loading="lazy"
                   srcSet={`${img.src} 288w`}

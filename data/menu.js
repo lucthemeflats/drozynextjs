@@ -8,14 +8,15 @@ export const categoryLinks = [
   { href: "/categories-2", label: "Categories Style 2" },
 ];
 export const singlePostLinks = [
-  { href: "/single-post-1/1", label: "Single Post Style 1" },
-  { href: "/single-post-2/1", label: "Single Post Style 2" },
+  { href: "/single-post-1/22", label: "Single Post Style 1" },
+  { href: "/single-post-2/20", label: "Single Post Style 2" },
 ];
 export const categoryLinks2 = [
-  { href: "/categories-1", label: "Life Style" },
-  { href: "/categories-1", label: "Home Decor" },
-  { href: "/categories-1", label: "Skin Care" },
-  { href: "/categories-1", label: "Technology" },
-  { href: "/categories-1", label: "Trending" },
-  { href: "/categories-1", label: "Fashion" },
+  { href: "/categories-1", label: "Home Decor", slug: "home-decor" },
+  { href: "/categories-1", label: "Travel", slug: "travel" },
+  { href: "/categories-1", label: "Food", slug: "food" },
+  { href: "/categories-1", label: "Mindfulness", slug: "mindfulness" },
+  { href: "/categories-1", label: "Fitness", slug: "fitness" },
+  { href: "/categories-1", label: "Fashion", slug: "fashion" },
+  { href: "/categories-1", label: "Skincare", slug: "skincare" },
 ];

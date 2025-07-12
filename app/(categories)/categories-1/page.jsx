@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+
 import BlogSidebar from "@/components/features/BlogSidebar";
 import Footer1 from "@/components/footers/Footer1";
 import Header1 from "@/components/headers/Header1";
@@ -7,12 +7,16 @@ import { listPosts, posts } from "@/data/blogs";
 import React from "react";
 import BlogCard1 from "@/components/blog-cards/BlogCard1";
 import BlogCard4 from "@/components/blog-cards/BlogCard4";
+import Pagination from "@/components/common/Pagination";
 export const metadata = {
   title:
     "Categories 01 || Drozy - Modern Blog & Magazine React Nextjs Template",
   description: "Drozy - Modern Blog & Magazine React Nextjs Template",
 };
-export default function page() {
+export default async function page({ searchParams }) {
+  const filters = await searchParams;
+  const page = filters.page || 1;
+  const pages = Math.ceil(posts.length / 9);
   return (
     <>
       <Header1 />
@@ -37,7 +41,9 @@ export default function page() {
           <div className="tf-container">
             <div className="title d-flex align-items-center gap_16">
               <h1 className="mb_12">Life Style</h1>
-              <span className="tag text-caption-1 text_white">30 article</span>
+              <span className="tag text-caption-1 black-on-dark text_white">
+                30 article
+              </span>
             </div>
             <p>
               Your destination for discovering new ways to enhance your
@@ -56,33 +62,19 @@ export default function page() {
                   ))}
                   <span className="tf-line" />
                   <div className="tf-grid-layout lg-col-3 md-col-2">
-                    {posts.map((post, index) => (
-                      <BlogCard1 key={index} post={post} />
-                    ))}
+                    {posts
+                      .slice((page - 1) * 9, page * 9)
+                      .map((post, index) => (
+                        <BlogCard1 key={index} post={post} />
+                      ))}
                   </div>
-                  <ul className="wg-pagination d-flex justify-content-center gap_12">
-                    <li>
-                      <a href="#">
-                        <i className="icon-CaretLeft" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="active">
-                        1
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">...</a>
-                    </li>
-                    <li>
-                      <a href="#">4</a>
-                    </li>
-                    <li className="active">
-                      <a href="#">
-                        <i className="icon-CaretRight" />
-                      </a>
-                    </li>
-                  </ul>
+                  {pages > 1 ? (
+                    <ul className="wg-pagination d-flex justify-content-center gap_12">
+                      <Pagination pages={pages} currentPage={page} />
+                    </ul>
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div className="col-lg-3">
                   <BlogSidebar />

@@ -61,21 +61,21 @@ export const mediaItems = [
   {
     title: "Skincare Tips",
     posts: 182,
-    imgSrc: "/images/sections/category-8.webp",
+    imgSrc: "/images/sections/category-7.webp",
   },
   {
     title: "Travel Diaries",
     posts: 124,
-    imgSrc: "/images/sections/category-8.webp",
+    imgSrc: "/images/sections/category-6.webp",
   },
   {
     title: "Home Decor",
     posts: 241,
-    imgSrc: "/images/sections/category-8.webp",
+    imgSrc: "/images/sections/category-5.webp",
   },
   {
     title: "Fashion Trends",
     posts: 192,
-    imgSrc: "/images/sections/category-8.webp",
+    imgSrc: "/images/sections/category-4.webp",
   },
 ];
