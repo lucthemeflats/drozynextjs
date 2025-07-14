@@ -30,15 +30,17 @@ export default function EditorsPic() {
                     height={664}
                     alt="feature post"
                     src={post.imgSrc}
-                  />
-                  <Link
-                    href={`/categories-1`}
-                    className="tag categories text-caption-2 text_white"
-                  >
-                    {post.category}
-                  </Link>
-                  <div className="tag time text-caption-2 text_white">
-                    <i className="icon-Timer" /> 4 Mins read
+                  />{" "}
+                  <div className="wrap-tag">
+                    <Link
+                      href={`/categories-1`}
+                      className="tag categories text-caption-2 text_white"
+                    >
+                      {post.category}
+                    </Link>
+                    <div className="tag time text-caption-2 text_white">
+                      <i className="icon-Timer" /> 4 Mins read
+                    </div>{" "}
                   </div>
                   <Link
                     href={`/single-post-1/${post.id}`}
@@ -106,27 +108,34 @@ export default function EditorsPic() {
                     alt="feature post"
                     src={post.imgSrc}
                   />
-
-                  <Link
-                    href={`/categories-1`}
-                    className="tag categories text-caption-2 text_white"
-                  >
-                    {post.category}
-                  </Link>
-                  <div className="tag time text-caption-2 text_white">
-                    <i className="icon-Timer" /> 4 Mins read
+                  <div className="wrap-tag">
+                    <Link
+                      href={`/categories-1`}
+                      className="tag categories text-caption-2 text_white"
+                    >
+                      {post.category}
+                    </Link>
+                    <div className="tag time text-caption-2 text_white">
+                      <i className="icon-Timer" /> 4 Mins read
+                    </div>
                   </div>
-
                   {post.hasVideo && (
                     <>
                       <button
-                        className="video_btn_play"
+                        className={`video_btn_play ${
+                          openVideo == index ? "active" : ""
+                        } `}
                         aria-label="Play / Pause"
                         onClick={() =>
                           setOpenVideo((pre) => (pre == index ? -1 : index))
                         }
                       >
-                        <i className="icon-play-filled" />
+                        {openVideo == index ? (
+                          <i className="icon-pause pause" />
+                        ) : (
+                          <i className="icon-play-filled" />
+                        )}
+
                         <span className="pause" />
                       </button>
                       <div

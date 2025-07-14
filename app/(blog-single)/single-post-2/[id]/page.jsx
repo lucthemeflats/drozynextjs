@@ -122,7 +122,7 @@ export default async function page({ params }) {
             <div className="tf-container">
               <div className="row">
                 <div className="col-lg-2 lg-hide">
-                  <div className="share-bar style-1 text-center">
+                  <div className="share-bar style-1 text-center sticky-top">
                     <h5 className="mb_20">Share This Post</h5>
                     <ul className="d-grid gap_10">
                       <SocialShare2 />

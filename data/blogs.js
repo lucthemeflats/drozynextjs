@@ -930,13 +930,10 @@ export const listPosts = [
 export const postItems = [
   {
     id: 90,
-    imgSrc: "/images/feature-post/feature-item-10.jpg",
-    category: "Furniture",
+
     date: "April 7, 2025",
     author: "Courtney Henry",
     title: "Home Workouts That Actually Work for.",
-    readTime: "4 Mins read",
-    hasImage: true,
   },
   {
     id: 91,

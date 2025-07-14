@@ -428,6 +428,11 @@
     .tf-grid-layout {
         position: relative;
     }
+    @include res(lg) {
+        .row {
+            row-gap: 40px;
+        }
+    }
     @include res(md) {
         .row {
             gap: 30px;

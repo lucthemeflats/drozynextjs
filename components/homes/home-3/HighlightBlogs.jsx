@@ -46,8 +46,10 @@ export default function HighlightBlogs() {
                       src={post.imgSrc}
                     />
                     {post.style === "large" && (
-                      <div className="tag time text-caption-2 text_white">
-                        <i className="icon-Timer" /> 4 Mins read
+                      <div className="wrap-tag">
+                        <div className="tag time text-caption-2 text_white">
+                          <i className="icon-Timer" /> 4 Mins read
+                        </div>
                       </div>
                     )}
                     <span className="overlay-link" />

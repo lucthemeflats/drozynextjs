@@ -117,7 +117,7 @@ export default async function page({ params }) {
           <div className="tf-container">
             <div className="row">
               <div className="col-lg-3">
-                <div className="share-bar text-center lg-hide">
+                <div className="share-bar text-center lg-hide sticky-top">
                   <h6 className="mb_20">Share This Post</h6>
                   <ul className="d-grid gap_6">
                     <Socialshare />

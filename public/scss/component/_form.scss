@@ -2,7 +2,7 @@
 
 form {
     position: relative;
-    z-index: 30;
+    z-index: 9;
     textarea,
     input[type="text"],
     input[type="password"],
@@ -83,10 +83,12 @@ form {
             height: 36px;
             width: 36px;
             border-radius: 50%;
-            color: var(--White);
+            color: var(--White-light);
+            font-size: 16px;
         }
         @include res(md, min) {
             .btn-icon {
+                font-size: 20px;
                 height: 44px;
                 width: 44px;
             }

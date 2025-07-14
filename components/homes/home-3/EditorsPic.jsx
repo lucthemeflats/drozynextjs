@@ -77,8 +77,10 @@ export default function EditorsPic() {
                       alt="feature"
                       src={item.imgSrc}
                     />
-                    <div className="tag time text-caption-2 text_white">
-                      <i className="icon-Timer" /> {item.readTime}
+                    <div className="wrap-tag">
+                      <div className="tag time text-caption-2 text_white">
+                        <i className="icon-Timer" /> {item.readTime}
+                      </div>
                     </div>
                     <Link
                       href={`/single-post-1/${item.id}`}

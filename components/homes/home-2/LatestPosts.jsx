@@ -45,15 +45,17 @@ export default function LatestPosts() {
                 height={208}
                 alt="latest-post"
                 src={post.imgSrc}
-              />
-              <Link
-                href={`/categories-1`}
-                className="tag categories text-caption-2 text_white"
-              >
-                {post.category}
-              </Link>
-              <div className="tag time text-caption-2 text_white">
-                <i className="icon-Timer" /> 4 Mins read
+              />{" "}
+              <div className="wrap-tag">
+                <Link
+                  href={`/categories-1`}
+                  className="tag categories text-caption-2 text_white"
+                >
+                  {post.category}
+                </Link>
+                <div className="tag time text-caption-2 text_white">
+                  <i className="icon-Timer" /> 4 Mins read
+                </div>
               </div>
               <Link
                 href={`/single-post-1/${post.id}`}

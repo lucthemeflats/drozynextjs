@@ -57,11 +57,12 @@
 }
 
 .header-menu {
+    position: relative;
+    z-index: 99;
+    background-color: var(--Surface);
     .btn-find {
         font-size: 24px;
         color: var(--On-surface);
-    }
-    @include res(lg) {
     }
     &.style-default {
         border-width: 1px 0px 1px 0px;
@@ -257,6 +258,9 @@
                 }
             }
         }
+    }
+    .support{
+        padding-bottom: 18px;
     }
     .tf-btn {
         margin-bottom: 24px;
@@ -478,21 +482,21 @@
     .menu-item-has-children-mobile {
         .item-menu-mobile {
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             &::after {
-                position: absolute;
+                position: relative;
                 content: "\e927";
                 font-family: $fontIcon;
                 font-size: 28px;
                 font-weight: 400;
                 color: var(--On-surface);
-                top: 50%;
-                transform: translateY(-50%);
-                right: 0;
                 @include transition3();
             }
             &:not(.collapsed) {
                 &::after {
-                    transform: translateY(-50%) rotate(180deg);
+                    transform: rotate(180deg);
                 }
             }
         }

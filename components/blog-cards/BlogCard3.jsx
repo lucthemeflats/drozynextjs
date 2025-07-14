@@ -26,12 +26,14 @@ export default function BlogCard3({ post }) {
           </Link>
         </h5>
         <div className="wrap-meta d-flex align-items-center gap_9 text-uppercase">
-          <Link
-            href={`/categories-1`}
-            className="tag categories text-caption-2 text_white"
-          >
-            {post.category}
-          </Link>
+          <div className="wrap-tag">
+            <Link
+              href={`/categories-1`}
+              className="tag categories text-caption-2 text_white"
+            >
+              {post.category}
+            </Link>
+          </div>
           <ul className="meta-feature fw-7 d-flex text-caption-2">
             <li>{post.date}</li>
             <li>

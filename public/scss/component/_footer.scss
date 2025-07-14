@@ -69,6 +69,9 @@
     .footer-body {
       flex-direction: column;
     }
+    .footer-content {
+      border: unset;
+    }
   }
   @include res(md) {
     .footer-content {

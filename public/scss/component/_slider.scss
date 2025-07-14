@@ -30,7 +30,7 @@
         background-color: var(--On-surface);
         border-radius: 50%;
         font-size: 22px;
-        &.swiper-button-disabled {
+        &:hover, &.swiper-button-disabled {
             background-color: var(--White-lght);
             border-color: var(--Line);
             color: var(--On-surface);
@@ -48,6 +48,10 @@
         &.swiper-button-disabled {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(4px);
+            color: var(--White);
+        }
+        &:hover{
+            background-color: var(--On-surface);
             color: var(--White);
         }
         @include res(lg) {

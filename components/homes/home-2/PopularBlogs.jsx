@@ -61,15 +61,17 @@ export default function PopularBlogs() {
                       height={473}
                       alt="feature post"
                       src={mainPost.imgSrc}
-                    />
-                    <Link
-                      href={`/categories-1`}
-                      className="tag categories text-caption-2 text_white"
-                    >
-                      {mainPost.category}
-                    </Link>
-                    <div className="tag time text-caption-2 text_white">
-                      <i className="icon-Timer" /> 4 Mins read
+                    />{" "}
+                    <div className="wrap-tag">
+                      <Link
+                        href={`/categories-1`}
+                        className="tag categories text-caption-2 text_white"
+                      >
+                        {mainPost.category}
+                      </Link>
+                      <div className="tag time text-caption-2 text_white">
+                        <i className="icon-Timer" /> 4 Mins read
+                      </div>
                     </div>
                     <Link
                       href={`/single-post-1/${mainPost.id}`}

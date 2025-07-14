@@ -30,6 +30,14 @@
     .header-fixed {
         backdrop-filter: blur(10px);
     }
+    .sidebar-categories {
+        .number {
+            color: #161616;
+        }
+    }
+    .header-menu {
+        --Surface: #161616;
+    }
     form input {
         --On-surface: #fff;
     }
